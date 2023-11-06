@@ -4,6 +4,7 @@ import clients.backDoor.BackDoorModel;
 import clients.backDoor.BackDoorView;
 import clients.cashier.CashierController;
 import clients.cashier.CashierModel;
+import clients.cashier.BetterCashierModel;
 import clients.cashier.CashierView;
 import clients.collection.CollectController;
 import clients.collection.CollectModel;
@@ -19,6 +20,7 @@ import clients.warehousePick.PickModel;
 import clients.warehousePick.PickView;
 import middle.LocalMiddleFactory;
 import middle.MiddleFactory;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -53,7 +55,7 @@ class Main
     if ( many ) 
      startCustomerGUI_MVC( mlf );
     startCashierGUI_MVC( mlf );
-    startCashierGUI_MVC( mlf );
+    startBetterCashierGUI_MVC( mlf );
     startBackDoorGUI_MVC( mlf );
     if ( many ) 
       startPickGUI_MVC( mlf );
@@ -88,6 +90,24 @@ class Main
   {
     JFrame  window = new JFrame();
     window.setTitle( "Cashier Client MVC");
+    window.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+    Dimension pos = PosOnScrn.getPos();
+    
+    CashierModel model      = new CashierModel(mlf);
+    CashierView view        = new CashierView( window, mlf, pos.width, pos.height );
+    CashierController cont  = new CashierController( model, view );
+    view.setController( cont );
+
+    model.addObserver( view );       // Add observer to the model
+    window.setVisible(true);         // Make window visible
+    model.askForUpdate();            // Initial display
+  }
+  
+  //Better Basket and Better Cashier
+  public void startBetterCashierGUI_MVC(MiddleFactory mlf )
+  {
+    JFrame  window = new JFrame();
+    window.setTitle( "Better Cashier Client MVC");
     window.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
     Dimension pos = PosOnScrn.getPos();
     

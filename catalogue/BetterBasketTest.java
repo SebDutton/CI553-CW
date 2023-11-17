@@ -34,8 +34,8 @@ class BetterBasketTest {
 	void testSortAddProduct() {
 		BetterBasket b = new BetterBasket();
 		Product p1 = new Product("0001", "Toaster", 10.00,1);
-		Product p2 = new Product("0003", "Microwave", 50.00,1);
-		Product p3 = new Product("0001", "Kettle", 15.00,1);
+		Product p2 = new Product("0002", "Microwave", 50.00,1);
+		Product p3 = new Product("0003", "Kettle", 15.00,1);
 		
 		//Test that p1 and p3 get sorted
 		b.add(p3);

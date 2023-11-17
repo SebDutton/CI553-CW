@@ -45,6 +45,10 @@ public class DisplayView extends Canvas implements Observer
     rootWindow.add( this, BorderLayout.CENTER );    //  Add to rootwindow
     
     rootWindow.setVisible( true );                  // Make visible
+    
+  //Colour Settings
+    rootWindow.setBackground(Color.blue);   //https://stackoverflow.com/questions/1081486/setting-background-color-for-a-jframe
+    cp.setBackground(Color.LIGHT_GRAY);
   }
   
   

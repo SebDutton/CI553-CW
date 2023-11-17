@@ -53,6 +53,10 @@ public class PickView implements Observer
     rootWindow.setSize( W, H );                     // Size of Window
     rootWindow.setLocation( x, y );
     
+  //Colour Settings
+    rootWindow.setBackground(Color.blue);   //https://stackoverflow.com/questions/1081486/setting-background-color-for-a-jframe
+    cp.setBackground(Color.LIGHT_GRAY);
+    
     Font f = new Font("Monospaced",Font.PLAIN,12);  // Font f is
 
     theBtPicked.setBounds( 16, 25+60*0, 80, 40 );   // Check Button

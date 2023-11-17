@@ -61,7 +61,13 @@ public class CustomerView implements Observer
     cp.setLayout(null);                             // No layout manager
     rootWindow.setSize( W, H );                     // Size of Window
     rootWindow.setLocation( x, y );
+    
+    
+    //Colour Settings
+    rootWindow.setBackground(Color.blue);   //https://stackoverflow.com/questions/1081486/setting-background-color-for-a-jframe
+    cp.setBackground(Color.LIGHT_GRAY);
 
+    
     Font f = new Font("Monospaced",Font.PLAIN,12);  // Font f is
 
     theBtCheck.setBounds( 16, 25+60*0, 80, 40 );    // Check button
@@ -91,6 +97,8 @@ public class CustomerView implements Observer
     thePicture.setBounds( 16, 25+60*2, 80, 80 );   // Picture area
     cp.add( thePicture );                           //  Add to canvas
     thePicture.clear();
+    
+    theAction.setText("Enter Product Number");
     
     rootWindow.setVisible( true );                  // Make visible);
     theInput.requestFocus();                        // Focus is here

@@ -59,6 +59,10 @@ public class CashierView implements Observer
     cp.setLayout(null);                             // No layout manager
     rootWindow.setSize( W, H );                     // Size of Window
     rootWindow.setLocation( x, y );
+    
+  //Colour Settings
+    rootWindow.setBackground(Color.blue);   //https://stackoverflow.com/questions/1081486/setting-background-color-for-a-jframe
+    cp.setBackground(Color.LIGHT_GRAY);
 
     Font f = new Font("Monospaced",Font.PLAIN,12);  // Font f is
 
